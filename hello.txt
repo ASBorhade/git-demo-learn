@@ -10,3 +10,5 @@ I am learning version control.
 This change is made on master.
 
 This line was added from GitHub.
+
+Dummy text added to check fetch.
