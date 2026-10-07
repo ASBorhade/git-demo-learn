@@ -1,0 +1,292 @@
+🟡 What you have NOT properly covered yet
+This is the important part.
+
+You should not move directly to Level 10 and assume everything is finished. There are some gaps.
+
+1. ⭐ Remote-tracking branches deeply
+You have used them, but we haven't completely explained:
+
+origin/login
+origin/master
+
+versus:
+
+login
+master
+
+You should understand:
+
+What exactly origin/login represents
+
+Why it isn't technically the GitHub branch itself
+
+How git fetch updates it
+
+Why it can become stale
+
+What happens when the remote branch is deleted
+
+How upstream configuration works
+
+git branch -vv
+
+git branch -u
+
+git branch --unset-upstream
+
+This should be our next topic.
+
+2. ⭐ Fork vs Clone
+You haven't properly covered:
+
+Fork
+vs
+Clone
+
+This becomes extremely important when working with open-source projects.
+
+3. ⭐ Pull Requests
+You pushed branches to GitHub, but you haven't really learned:
+
+What a Pull Request is
+
+Base branch
+
+Compare branch
+
+PR creation
+
+PR review
+
+Approval
+
+Requested changes
+
+Merging a PR
+
+Closing a PR
+
+Draft PR
+
+This will be our next major GitHub section.
+
+4. ⭐ GitHub collaboration workflow
+You haven't yet practiced the professional workflow:
+
+main
+ ↓
+feature branch
+ ↓
+push
+ ↓
+Pull Request
+ ↓
+Code Review
+ ↓
+CI checks
+ ↓
+Merge
+
+5. ⭐ Merge strategies
+You did a normal Git merge, but haven't properly learned:
+
+Fast-forward merge
+
+Three-way merge
+
+Merge commit
+
+Squash merge
+
+Rebase
+
+When each should be used
+
+6. ⭐ Rebase
+You haven't learned this properly yet:
+
+git rebase
+git rebase -i
+
+This is a major topic.
+
+7. ⭐ Stash
+Not covered yet:
+
+git stash
+git stash list
+git stash pop
+git stash apply
+git stash drop
+
+8. ⭐ Reset / Restore / Revert
+You haven't systematically learned the differences between:
+
+git restore
+git reset
+git revert
+
+This is one of the most important Git topics.
+
+9. ⭐ .gitignore
+Not covered yet:
+
+.gitignore
+
+and things like:
+
+node_modules/
+.env
+*.log
+
+10. ⭐ Tags and Releases
+Not covered:
+
+git tag
+git tag -a
+git push --tags
+
+and GitHub Releases.
+
+11. ⭐ GitHub Issues
+Not covered:
+
+Issues
+
+Labels
+
+Milestones
+
+Assignees
+
+Linking issues to PRs
+
+12. ⭐ GitHub Actions
+Not covered:
+
+.github/
+└── workflows/
+
+You'll eventually learn CI/CD and GitHub Actions.
+
+13. ⭐ SSH authentication
+You've used HTTPS:
+
+https://github.com/...
+
+You haven't learned the SSH approach:
+
+git@github.com:username/repository.git
+
+14. ⭐ Reflog
+Very important advanced recovery tool:
+
+git reflog
+
+This can save you when you think you've "lost" a commit.
+
+15. ⭐ Cherry-pick
+Not covered:
+
+git cherry-pick
+
+16. ⭐ Bisect
+Not covered:
+
+git bisect
+
+Useful for finding which commit introduced a bug.
+
+17. ⭐ Git internals
+Eventually:
+
+.git/
+├── HEAD
+├── config
+├── objects/
+├── refs/
+└── index
+
+and:
+
+blobs
+
+trees
+
+commits
+
+refs
+
+HEAD
+
+index
+
+SHA
+
+One thing I noticed in your practice
+You made this mistake:
+
+C:\Git Learn clone>git status
+fatal: not a git repository
+
+That's actually a good mistake.
+
+You were in:
+
+C:\Git Learn clone
+
+but the repository was:
+
+C:\Git Learn clone\git-demo-learn
+
+Git commands operate inside a Git repository (or an appropriate subdirectory of one).
+
+So:
+
+C:\Git Learn clone
+        ❌
+        
+C:\Git Learn clone\git-demo-learn
+        ✅
+
+That's exactly the kind of mistake you want to encounter while learning.
+
+Your current learning position
+I'd put you approximately here:
+
+Level 1  ██████████  100%
+Level 2  ██████████  100%
+Level 3  ██████████  100%
+Level 4  ░░░░░░░░░░   10%
+Level 5  ██████████  100%
+Level 6  ██████████  100%
+Level 7  ██████████  100%
+Level 8  ████████░░   80%
+Level 9  ████████░░   80%
+Level 10 ░░░░░░░░░░    0%
+
+And you've had a small taste of advanced Git through detached HEAD.
+
+So where should we continue?
+I recommend not jumping to Pull Requests yet.
+
+First, let's finish the missing 20% of Level 8, especially:
+
+Local branch
+      ↓
+login
+      │
+      │ upstream
+      ↓
+origin/login
+      │
+      ↓
+remote-tracking branch
+
+We'll do it practically with your current repository and answer the confusing questions:
+
+Is origin/login actually on GitHub?
+What exactly changes after git fetch?
+Why can origin/login be different from the real GitHub branch?
+What does -u actually do?
+Why did git push fail on master but work on login?
